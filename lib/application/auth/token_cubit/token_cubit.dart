@@ -18,7 +18,7 @@ class TokenCubit extends Cubit<TokenState> {
     try {
       final rt = pref.token.value.refreshToken;
       // Checking token expire or not
-      final isExpired = JwtDecoder.isExpired(rt ?? "");
+      final isExpired = JwtDecoder.isExpired(rt ?? "no");
       // Checking institute profile completed or not
       // final isProfileCompleted = pref.token.value.isSubmit ?? false;
       // if (!isExpired && isProfileCompleted) {
