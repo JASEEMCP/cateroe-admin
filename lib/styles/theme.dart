@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:app/styles/colors.dart';
+import 'package:flutter/services.dart';
 
 enum ThemeType {
   light,
@@ -9,13 +10,19 @@ enum ThemeType {
 class AppTheme {
   static ThemeType defaultTheme = ThemeType.light;
 
-  bool isDark;
+  bool? isDark = false;
+  Color? kPrimaryGold = AppColors.kGold;
+  Color? kSecondary = AppColors.kSecondary;
+  Color? kSecondaryLight = AppColors.kSecondaryLight;
   Color kBlack;
   Color kWhite;
 
   /// Default constructor
   AppTheme({
-    required this.isDark,
+    this.isDark,
+    this.kSecondary,
+    this.kPrimaryGold,
+    this.kSecondaryLight,
     required this.kBlack,
     required this.kWhite,
   });
@@ -26,15 +33,18 @@ class AppTheme {
       case ThemeType.light:
         return AppTheme(
           isDark: false,
+          kSecondary: AppColors.kSecondary,
+          kSecondaryLight: AppColors.kSecondaryLight,
+          kPrimaryGold: AppColors.kGold,
           kBlack: AppColors.kBlack,
-          kWhite: AppColors.kBlack,
+          kWhite: AppColors.kWhite,
         );
 
       case ThemeType.dark:
         return AppTheme(
           isDark: true,
-          kBlack: AppColors.primaryDark,
-          kWhite: AppColors.secondaryDark,
+          kBlack: AppColors.kBlack,
+          kWhite: AppColors.kWhite,
         );
     }
   }
@@ -42,6 +52,18 @@ class AppTheme {
   ThemeData get themeData {
     var t = ThemeData(
       useMaterial3: true,
+      scaffoldBackgroundColor: kWhite,
+
+      appBarTheme: AppBarTheme(
+        backgroundColor: kWhite,
+        surfaceTintColor: kWhite,
+        systemOverlayStyle: SystemUiOverlayStyle(
+          statusBarColor: Colors.transparent, //i like transaparent :-)
+          systemNavigationBarColor: Colors.white, // navigation bar color
+          statusBarIconBrightness: Brightness.dark, // status bar icons' color
+          systemNavigationBarIconBrightness: Brightness.dark,
+        ),
+      ),
     );
     return t.copyWith(
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,

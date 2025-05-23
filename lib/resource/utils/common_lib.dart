@@ -9,3 +9,4 @@ export 'package:app/router/router_path.dart';
 export 'package:app/resource/utils/validator.dart';
 export 'package:flutter_bloc/flutter_bloc.dart';
 export 'package:app/resource/utils/extensions.dart';
+export 'package:app/presentation/widget/helper_widget.dart';

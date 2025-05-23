@@ -1,3 +1,4 @@
+import 'package:app/presentation/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:app/presentation/main_screen/main_screen.dart';
@@ -44,7 +45,7 @@ class AppRouter {
             parentNavigatorKey: _shellNavigatorKey,
             pageBuilder: (context, state) {
               return const CustomTransitionPage(
-                child: Center(child: Text('Login')),
+                child: ScreenHome(),
                 transitionsBuilder: useNavChangeTransition,
               );
             },
