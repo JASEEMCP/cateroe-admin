@@ -66,14 +66,14 @@ class _ScreenMainState extends State<ScreenMain> {
                         () {
                           tabChangeNotifier.value = 2;
                           if (index != 2) {
-                            //context.go(ScreenPath.booking);
+                            context.go(ScreenPath.transaction);
                           }
                         },
                       ),
                       _buildNavIconBtn(
                         index == 3,
-                        Icons.person_outline,
-                        Icons.person,
+                        Icons.add_home_outlined,
+                        Icons.add_home,
                         () {
                           tabChangeNotifier.value = 3;
                           if (index != 3) {

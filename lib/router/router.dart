@@ -1,5 +1,6 @@
 import 'package:app/presentation/events/event_screen.dart';
 import 'package:app/presentation/home/home_screen.dart';
+import 'package:app/presentation/transaction/transaction_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:app/presentation/main_screen/main_screen.dart';
@@ -59,6 +60,17 @@ class AppRouter {
             pageBuilder: (context, state) {
               return const CustomTransitionPage(
                 child: EventScreen(),
+                transitionsBuilder: useNavChangeTransition,
+              );
+            },
+          ),
+                    /// Events
+          GoRoute(
+            path: ScreenPath.transaction,
+            parentNavigatorKey: _shellNavigatorKey,
+            pageBuilder: (context, state) {
+              return const CustomTransitionPage(
+                child: TransactionScreen(),
                 transitionsBuilder: useNavChangeTransition,
               );
             },
