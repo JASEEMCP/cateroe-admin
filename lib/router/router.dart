@@ -1,3 +1,4 @@
+import 'package:app/presentation/add_user/add_user_screen.dart';
 import 'package:app/presentation/events/event_screen.dart';
 import 'package:app/presentation/home/home_screen.dart';
 import 'package:app/presentation/transaction/transaction_screen.dart';
@@ -64,13 +65,26 @@ class AppRouter {
               );
             },
           ),
-                    /// Events
+
+          /// Transaction
           GoRoute(
             path: ScreenPath.transaction,
             parentNavigatorKey: _shellNavigatorKey,
             pageBuilder: (context, state) {
               return const CustomTransitionPage(
                 child: TransactionScreen(),
+                transitionsBuilder: useNavChangeTransition,
+              );
+            },
+          ),
+
+          /// Add-User
+          GoRoute(
+            path: ScreenPath.addUser,
+            parentNavigatorKey: _shellNavigatorKey,
+            pageBuilder: (context, state) {
+              return const CustomTransitionPage(
+                child: AddUserScreen(),
                 transitionsBuilder: useNavChangeTransition,
               );
             },

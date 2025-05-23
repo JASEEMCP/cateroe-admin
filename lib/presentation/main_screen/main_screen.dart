@@ -77,7 +77,7 @@ class _ScreenMainState extends State<ScreenMain> {
                         () {
                           tabChangeNotifier.value = 3;
                           if (index != 3) {
-                            //context.go(ScreenPath.profile);
+                            context.go(ScreenPath.addUser);
                           }
                         },
                       ),
