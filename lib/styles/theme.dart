@@ -12,6 +12,7 @@ class AppTheme {
 
   bool? isDark = false;
   Color? kPrimaryGold = AppColors.kGold;
+  Color? kPrimaryGoldLight = AppColors.kGoldLight;
   Color? kSecondary = AppColors.kSecondary;
   Color? kSecondaryLight = AppColors.kSecondaryLight;
   Color kBlack;
@@ -22,6 +23,7 @@ class AppTheme {
     this.isDark,
     this.kSecondary,
     this.kPrimaryGold,
+    this.kPrimaryGoldLight,
     this.kSecondaryLight,
     required this.kBlack,
     required this.kWhite,
@@ -38,6 +40,7 @@ class AppTheme {
           kPrimaryGold: AppColors.kGold,
           kBlack: AppColors.kBlack,
           kWhite: AppColors.kWhite,
+          kPrimaryGoldLight: AppColors.kGoldLight,
         );
 
       case ThemeType.dark:

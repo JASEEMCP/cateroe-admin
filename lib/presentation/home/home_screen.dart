@@ -1,3 +1,4 @@
+import 'package:app/presentation/widget/custom_event_card.dart';
 import 'package:app/presentation/widget/custom_home_card.dart';
 import 'package:app/resource/utils/common_lib.dart';
 
@@ -21,13 +22,13 @@ class ScreenHome extends StatelessWidget {
           spacing: inset.xs,
           children: [
             Container(
-              height: 45,
-              width: 45,
+              height: 48,
+              width: 48,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: context.theme.kWhite,
                 border: Border.all(
-                  color: context.theme.kBlack.withValues(alpha: 0.2),
+                  color: context.theme.kPrimaryGold!,
                 ),
               ),
               //child: Icon(Icons.account_circle),
@@ -37,7 +38,7 @@ class ScreenHome extends StatelessWidget {
               children: [
                 CustomText(
                   txt: 'Jaseem',
-                  color: context.theme.kBlack,
+                  color: context.theme.kPrimaryGold,
                 ),
                 CustomText(
                   txt: 'Admin',
@@ -95,10 +96,13 @@ class ScreenHome extends StatelessWidget {
             CustomText(
               txt: 'Ongoing Works',
               fontWeight: FontWeight.normal,
+              fontSize: 18,
             ),
+            CustomEventCard(),
           ],
         ),
       ),
     );
   }
 }
+
