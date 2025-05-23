@@ -1,10 +1,8 @@
-
-
 import 'package:app/main.dart';
 
 class ScreenPath {
-
   static const splash = '/';
+
   /// Auth routes
   static const login = '/login';
   static const signup = '/signup';
@@ -13,12 +11,9 @@ class ScreenPath {
   static resetPwd(String email) => _appendIdIntoCurrentPath('/reset?e=$email');
 
   /// Main routes
-  
+
   static const home = '/home';
-
-
-
-
+  static const events = '/events';
 
   ///Appending path
   static _appendIdIntoCurrentPath(String path) {
@@ -27,8 +22,9 @@ class ScreenPath {
     Map<String, dynamic> parm = Map.of(currentPathUri.queryParameters);
     parm.addAll(newPathUri.queryParameters);
     Uri? loc = Uri(
-        path: '${currentPathUri.path}/${newPathUri.path}'.replaceAll('//', '/'),
-        queryParameters: parm);
+      path: '${currentPathUri.path}/${newPathUri.path}'.replaceAll('//', '/'),
+      queryParameters: parm,
+    );
     final newPath = path.replaceAll('/', '');
     return loc.toString().replaceAll('$newPath/$newPath', newPath);
   }

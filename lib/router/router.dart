@@ -1,3 +1,4 @@
+import 'package:app/presentation/events/event_screen.dart';
 import 'package:app/presentation/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -51,7 +52,17 @@ class AppRouter {
             },
           ),
 
-          /// Profile
+          /// Events
+          GoRoute(
+            path: ScreenPath.events,
+            parentNavigatorKey: _shellNavigatorKey,
+            pageBuilder: (context, state) {
+              return const CustomTransitionPage(
+                child: EventScreen(),
+                transitionsBuilder: useNavChangeTransition,
+              );
+            },
+          ),
         ],
       ),
     ],

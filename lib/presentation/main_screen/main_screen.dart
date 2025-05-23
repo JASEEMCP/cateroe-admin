@@ -44,7 +44,7 @@ class _ScreenMainState extends State<ScreenMain> {
                         () {
                           tabChangeNotifier.value = 0;
                           if (index != 0) {
-                            //context.go(ScreenPath.home);
+                            context.go(ScreenPath.home);
                           }
                         },
                       ),
@@ -55,7 +55,7 @@ class _ScreenMainState extends State<ScreenMain> {
                         () {
                           tabChangeNotifier.value = 1;
                           if (index != 1) {
-                            //context.go(ScreenPath.search);
+                            context.go(ScreenPath.events);
                           }
                         },
                       ),

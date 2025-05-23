@@ -41,11 +41,11 @@ class CustomHomeCard extends StatelessWidget {
           Icon(
             icon ?? Icons.trending_up_rounded,
             color: iconColor ?? Colors.green,
-            size: 40,
+            size: 35,
           ),
           CustomText(
             txt: title ?? '32,000',
-            fontSize: 22,
+            fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
           CustomText(txt: subtitle ?? 'Revenue'),

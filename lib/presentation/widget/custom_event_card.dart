@@ -28,17 +28,12 @@ class CustomEventCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            //crossAxisAlignment: CrossAxisAlignment.start,
-            spacing: inset.xs,
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+
             children: [
-              // Icon(
-              //   Icons.event_note,
-              //   color: Colors.indigo,
-              //   size: 28,
-              // ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   CustomText(
                     txt: 'Event Name',
@@ -46,12 +41,19 @@ class CustomEventCard extends StatelessWidget {
                     color: context.theme.kSecondaryLight,
                     fontSize: 18,
                   ),
-                  CustomText(
-                    txt: 'Kannur,Kerala',
-                    fontWeight: FontWeight.normal,
-                    fontSize: 12,
+                  // Icon(
+                  Icon(
+                    Icons.pending,
+                    color: Colors.indigo,
+                    size: 28,
                   ),
                 ],
+              ),
+
+              CustomText(
+                txt: 'Kannur,Kerala',
+                fontWeight: FontWeight.normal,
+                fontSize: 12,
               ),
             ],
           ),
