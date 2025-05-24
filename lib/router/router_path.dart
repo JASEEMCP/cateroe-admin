@@ -16,6 +16,7 @@ class ScreenPath {
   static const events = '/events';
   static const transaction = '/transaction';
   static const addUser = '/add-user';
+  static const remarks = '/remarks';
 
   ///Appending path
   static _appendIdIntoCurrentPath(String path) {

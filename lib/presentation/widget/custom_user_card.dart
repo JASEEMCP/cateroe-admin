@@ -4,7 +4,10 @@ import 'package:app/resource/utils/common_lib.dart';
 class CustomUserCard extends StatelessWidget {
   const CustomUserCard({
     super.key,
+    this.buttonName, required this.onTap,
   });
+  final String? buttonName;
+  final Function() onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -116,10 +119,10 @@ class CustomUserCard extends StatelessWidget {
             children: [
               Expanded(
                 child: CustomButton(
-                  text: 'Edit',
+                  text: buttonName ?? 'Edit',
                   textColor: context.theme.kPrimaryGold,
                   bgColor: context.theme.kSecondaryLight,
-                  onTap: () {},
+                  onTap: onTap,
                 ),
               ),
               Expanded(

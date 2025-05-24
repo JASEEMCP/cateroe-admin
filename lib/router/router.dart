@@ -1,6 +1,7 @@
 import 'package:app/presentation/add_user/add_user_screen.dart';
 import 'package:app/presentation/events/event_screen.dart';
 import 'package:app/presentation/home/home_screen.dart';
+import 'package:app/presentation/remarks/remarks_screen.dart';
 import 'package:app/presentation/transaction/transaction_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -85,6 +86,17 @@ class AppRouter {
             pageBuilder: (context, state) {
               return const CustomTransitionPage(
                 child: AddUserScreen(),
+                transitionsBuilder: useNavChangeTransition,
+              );
+            },
+          ),
+          /// Remarks
+          GoRoute(
+            path: ScreenPath.remarks,
+            parentNavigatorKey: _shellNavigatorKey,
+            pageBuilder: (context, state) {
+              return const CustomTransitionPage(
+                child: RemarksScreen(),
                 transitionsBuilder: useNavChangeTransition,
               );
             },

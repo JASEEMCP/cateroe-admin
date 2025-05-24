@@ -17,7 +17,7 @@ class _ScreenMainState extends State<ScreenMain> {
     final inset = $style.insets;
     return Scaffold(
       bottomNavigationBar: Container(
-        height: 90,
+        height: 80,
         decoration: BoxDecoration(
           color: context.theme.kSecondary,
           border: Border(
@@ -88,7 +88,7 @@ class _ScreenMainState extends State<ScreenMain> {
                         () {
                           tabChangeNotifier.value = 4;
                           if (index != 4) {
-                            //context.go(ScreenPath.profile);
+                            context.go(ScreenPath.remarks);
                           }
                         },
                       ),
