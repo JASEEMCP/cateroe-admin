@@ -2,6 +2,7 @@ import 'package:app/presentation/add_user/add_user_screen.dart';
 import 'package:app/presentation/events/event_screen.dart';
 import 'package:app/presentation/home/home_screen.dart';
 import 'package:app/presentation/remarks/remarks_screen.dart';
+import 'package:app/presentation/remarks/screens/remark_event_list_screen.dart';
 import 'package:app/presentation/transaction/transaction_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -90,6 +91,7 @@ class AppRouter {
               );
             },
           ),
+
           /// Remarks
           GoRoute(
             path: ScreenPath.remarks,
@@ -100,6 +102,18 @@ class AppRouter {
                 transitionsBuilder: useNavChangeTransition,
               );
             },
+            routes: [
+              GoRoute(
+                path: 'event-list',
+                parentNavigatorKey: _rootNavigatorKey,
+                pageBuilder: (context, state) {
+                  return const CustomTransitionPage(
+                    child: RemarkEventEventListScreen(),
+                    transitionsBuilder: useNavChangeTransition,
+                  );
+                },
+              ),
+            ],
           ),
         ],
       ),

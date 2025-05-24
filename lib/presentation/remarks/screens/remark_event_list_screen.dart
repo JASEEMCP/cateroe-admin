@@ -1,11 +1,13 @@
-import 'package:app/presentation/widget/custom_user_card.dart';
+import 'package:app/presentation/widget/custom_remark_event_card.dart';
 import 'package:app/resource/utils/common_lib.dart';
 
-class RemarksScreen extends StatelessWidget {
-  const RemarksScreen({super.key});
+class RemarkEventEventListScreen extends StatelessWidget {
+  const RemarkEventEventListScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+   
+
     return DefaultTabController(
       length: 2,
       child: Scaffold(
@@ -13,20 +15,13 @@ class RemarksScreen extends StatelessWidget {
           headerSliverBuilder: (context, innerBoxIsScrolled) => [
             SliverAppBar(
               title: CustomText(
-                txt: 'Remarks',
+                txt: 'Events List',
                 fontWeight: FontWeight.w600,
                 fontSize: 24,
               ),
 
               pinned: true,
               floating: true,
-              // bottom: PreferredSize(
-              //   preferredSize: Size(double.maxFinite, 70),
-              //   child: Padding(
-              //     padding: EdgeInsets.all(inset.sm),
-              //     child: CupertinoSearchTextField(),
-              //   ),
-              // ),
             ),
           ],
           body: _buildEventList(),
@@ -42,12 +37,7 @@ class RemarksScreen extends StatelessWidget {
       separatorBuilder: (context, index) => Gap(inset.sm),
       padding: EdgeInsets.all(inset.sm),
       itemBuilder: (ctx, index) {
-        return CustomUserCard(
-          buttonName: 'View',
-          onTap: () {
-            ctx.go(ScreenPath.remarkEvent());
-          },
-        );
+        return CustomRemarkEventCard();
       },
     );
   }

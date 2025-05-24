@@ -18,6 +18,9 @@ class ScreenPath {
   static const addUser = '/add-user';
   static const remarks = '/remarks';
 
+  /// Sub-Routes
+  static remarkEvent() => _appendIdIntoCurrentPath('event-list');
+
   ///Appending path
   static _appendIdIntoCurrentPath(String path) {
     final newPathUri = Uri.parse(path);
