@@ -64,8 +64,8 @@ class EventScreen extends StatelessWidget {
           ],
           body: TabBarView(
             children: [
-              _buildEventList(),
-              _buildEventList(),
+              _buildEventList('Edit Event'),
+              _buildEventList('View Event'),
             ],
           ),
         ),
@@ -73,7 +73,7 @@ class EventScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildEventList() {
+  Widget _buildEventList(String btnName) {
     final inset = $style.insets;
     return ListView.separated(
       itemCount: 5,
@@ -81,8 +81,9 @@ class EventScreen extends StatelessWidget {
       padding: EdgeInsets.all(inset.sm),
       itemBuilder: (ctx, index) {
         return CustomEventCard(
+          btnName: btnName,
           onTap: () {
-            ctx.go(ScreenPath.eventDetail());
+            ctx.go(ScreenPath.eventOverview());
           },
         );
       },

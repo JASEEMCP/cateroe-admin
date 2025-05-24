@@ -2,6 +2,7 @@ import 'package:app/presentation/add_user/add_user_screen.dart';
 import 'package:app/presentation/add_user/screen/add_new_user_screen.dart';
 import 'package:app/presentation/events/event_screen.dart';
 import 'package:app/presentation/events/screens/event_detail_screen.dart';
+import 'package:app/presentation/events/screens/event_overview_screen.dart';
 import 'package:app/presentation/home/home_screen.dart';
 import 'package:app/presentation/remarks/remarks_screen.dart';
 import 'package:app/presentation/remarks/screens/remark_event_list_screen.dart';
@@ -76,6 +77,16 @@ class AppRouter {
                 pageBuilder: (context, state) {
                   return const CustomTransitionPage(
                     child: EventDetailScreen(),
+                    transitionsBuilder: useNavChangeTransition,
+                  );
+                },
+              ),
+              GoRoute(
+                path: 'event-overview',
+                parentNavigatorKey: _rootNavigatorKey,
+                pageBuilder: (context, state) {
+                  return const CustomTransitionPage(
+                    child: EventOverviewScreen(),
                     transitionsBuilder: useNavChangeTransition,
                   );
                 },

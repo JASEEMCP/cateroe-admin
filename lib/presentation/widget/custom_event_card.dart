@@ -5,8 +5,10 @@ class CustomEventCard extends StatelessWidget {
   const CustomEventCard({
     super.key,
     required this.onTap,
+    required this.btnName,
   });
   final Function() onTap;
+  final String btnName;
 
   @override
   Widget build(BuildContext context) {
@@ -45,8 +47,12 @@ class CustomEventCard extends StatelessWidget {
                   ),
                   // Icon(
                   Icon(
-                    Icons.pending,
-                    color: Colors.indigo,
+                    btnName == 'Edit Event'
+                        ? Icons.pending
+                        : Icons.check_circle,
+                    color: btnName == 'Edit Event'
+                        ? Colors.indigo
+                        : Colors.green,
                     size: 28,
                   ),
                 ],
@@ -101,7 +107,7 @@ class CustomEventCard extends StatelessWidget {
           ),
           Gap(inset.sm),
           CustomButton(
-            text: 'Edit Event',
+            text: btnName,
             textColor: context.theme.kPrimaryGold,
             bgColor: context.theme.kSecondaryLight,
             onTap: onTap,

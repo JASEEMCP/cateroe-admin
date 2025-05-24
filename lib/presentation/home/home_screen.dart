@@ -99,6 +99,7 @@ class ScreenHome extends StatelessWidget {
               fontSize: 18,
             ),
             CustomEventCard(
+              btnName: 'Edit Event',
               onTap: () {},
             ),
           ],
