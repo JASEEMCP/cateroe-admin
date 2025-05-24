@@ -119,7 +119,6 @@ class CustomDropDownSearch extends StatelessWidget {
             border: _buildInputBorder(context, radius),
           ),
         ),
-        Gap(inset.xs),
       ],
     );
   }

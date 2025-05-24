@@ -45,6 +45,7 @@ class EventDetailScreen extends StatelessWidget {
               CustomTextFieldWidget(
                 label: 'Location (Link)',
                 hint: 'URL',
+                suffix: Icon(Icons.place),
               ),
               CustomTextFieldWidget(
                 label: 'Date of Event',
@@ -71,25 +72,98 @@ class EventDetailScreen extends StatelessWidget {
               CustomTextFieldWidget(
                 label: 'PAX Count',
               ),
+              CustomTextFieldWidget(
+                label: 'Organization Name',
+              ),
+              CustomTextFieldWidget(
+                label: 'Boys Count',
+              ),
               CustomDropDownSearch(
-                label: 'Level',
+                label: 'Dining Set',
                 hintText: '-Select-',
                 menu: [
-                  MenuItem('id', 'Junior'),
-                  MenuItem('id', 'Normal'),
-                  MenuItem('id', 'Senior'),
+                  MenuItem('id', 'Sitting'),
+                  MenuItem('id', 'Buffet'),
+                  MenuItem('id', 'Both'),
                 ],
                 onSelect: (p0) {},
               ),
-              CustomDropDownSearch(
-                label: 'Position',
-                hintText: '-Select-',
-                menu: [
-                  MenuItem('id', 'Boy'),
-                  MenuItem('id', 'Supervisor'),
-                  MenuItem('id', 'Caption'),
+              CustomTextFieldWidget(
+                label: 'Caption',
+                hint: 'Search Caption',
+                suffix: Icon(Icons.badge),
+              ),
+              CustomTextFieldWidget(
+                label: 'Caption',
+                hint: 'Price',
+                suffix: Icon(Icons.price_change),
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                spacing: inset.xs,
+                children: [
+                  Expanded(
+                    child: CustomTextFieldWidget(
+                      label: 'Junior Boy',
+                      hint: 'Price',
+                      suffix: Icon(Icons.price_change),
+                    ),
+                  ),
+                  Expanded(
+                    child: CustomTextFieldWidget(
+                      label: 'Normal Boy',
+                      hint: 'Price',
+                      suffix: Icon(Icons.price_change),
+                    ),
+                  ),
                 ],
-                onSelect: (p0) {},
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                spacing: inset.xs,
+                children: [
+                  Expanded(
+                    child: CustomTextFieldWidget(
+                      label: 'Senior Boy',
+                      hint: 'Price',
+                      suffix: Icon(Icons.price_change),
+                    ),
+                  ),
+                  Expanded(
+                    child: CustomTextFieldWidget(
+                      label: 'Supervisor',
+                      hint: 'Price',
+                      suffix: Icon(Icons.price_change),
+                    ),
+                  ),
+                ],
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                spacing: inset.xs,
+                children: [
+                  CustomText(
+                    txt: 'Upload Position',
+                    fontSize: 14,
+
+                    color: context.theme.kSecondary,
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(
+                        width: 1,
+                        color: context.theme.kBlack.withValues(alpha: 0.1),
+                      ),
+                    ),
+                    child: Center(
+                      child: IconButton(
+                        onPressed: () {},
+                        icon: Icon(Icons.upload),
+                      ),
+                    ),
+                  ),
+                ],
               ),
 
               CustomButton(
