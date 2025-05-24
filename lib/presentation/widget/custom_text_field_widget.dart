@@ -1,8 +1,5 @@
-import 'package:app/presentation/widget/helper_widget.dart';
 import 'package:app/resource/utils/common_lib.dart';
-import 'package:app/resource/utils/extensions.dart';
 import 'package:flutter/services.dart';
-
 
 class CustomTextFieldWidget extends StatelessWidget {
   const CustomTextFieldWidget({
@@ -11,13 +8,17 @@ class CustomTextFieldWidget extends StatelessWidget {
     this.controller,
     this.validator,
     required this.label,
-    this.suffix, this.type, this.inputFormatters,
+    this.suffix,
+    this.type,
+    this.inputFormatters,
+    this.hint,
   });
 
   final bool? obscureText;
   final TextEditingController? controller;
   final String? Function(String? p1)? validator;
   final String label;
+  final String? hint;
   final Widget? suffix;
   final TextInputType? type;
   final List<TextInputFormatter>? inputFormatters;
@@ -30,9 +31,9 @@ class CustomTextFieldWidget extends StatelessWidget {
       children: [
         CustomText(
           txt: label,
-          fontSize: 12,
-          fontWeight: FontWeight.w600,
-          color: Colors.indigo,
+          fontSize: 14,
+
+          color: context.theme.kSecondary,
         ),
         Gap(inset.xxs),
         TextFormField(
@@ -41,11 +42,11 @@ class CustomTextFieldWidget extends StatelessWidget {
           obscureText: obscureText ?? false,
           controller: controller,
           validator: validator,
-          style: $style.text.textN12.copyWith(),
+          style: $style.text.textN14.copyWith(),
           decoration: InputDecoration(
-            //hintText: 'Enter email',
+            hintText: hint ?? label,
             suffixIcon: suffix,
-            hintStyle: $style.text.textN12.copyWith(),
+            hintStyle: $style.text.textN14.copyWith(),
             contentPadding: const EdgeInsets.all(12),
             border: _applyBorder(context),
             focusedBorder: _applyBorder(context),

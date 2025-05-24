@@ -12,7 +12,7 @@ class AddUserScreen extends StatelessWidget {
       length: 2,
       child: Scaffold(
         body: NestedScrollView(
-          headerSliverBuilder: (context, innerBoxIsScrolled) => [
+          headerSliverBuilder: (ctx, innerBoxIsScrolled) => [
             SliverAppBar(
               title: CustomText(
                 txt: 'Add User',
@@ -21,7 +21,9 @@ class AddUserScreen extends StatelessWidget {
               ),
               actions: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    context.go(ScreenPath.addNewUser());
+                  },
                   icon: Icon(
                     Icons.add_circle_rounded,
                     size: 35,
@@ -55,9 +57,7 @@ class AddUserScreen extends StatelessWidget {
       padding: EdgeInsets.all(inset.sm),
       itemBuilder: (ctx, index) {
         return CustomUserCard(
-          onTap: () {
-            
-          },
+          onTap: () {},
         );
       },
     );

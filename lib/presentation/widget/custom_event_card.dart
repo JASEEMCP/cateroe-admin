@@ -3,8 +3,9 @@ import 'package:app/resource/utils/common_lib.dart';
 
 class CustomEventCard extends StatelessWidget {
   const CustomEventCard({
-    super.key,
+    super.key, required this.onTap,
   });
+  final Function() onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -99,10 +100,10 @@ class CustomEventCard extends StatelessWidget {
           ),
           Gap(inset.sm),
           CustomButton(
-            text: 'View Event',
+            text: 'Edit Event',
             textColor: context.theme.kPrimaryGold,
             bgColor: context.theme.kSecondaryLight,
-            onTap: () {},
+            onTap: onTap,
           ),
         ],
       ),

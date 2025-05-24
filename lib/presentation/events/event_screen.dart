@@ -78,7 +78,11 @@ class EventScreen extends StatelessWidget {
       separatorBuilder: (context, index) => Gap(inset.sm),
       padding: EdgeInsets.all(inset.sm),
       itemBuilder: (ctx, index) {
-        return CustomEventCard();
+        return CustomEventCard(
+          onTap: () {
+            ctx.go(ScreenPath.eventDetail());
+          },
+        );
       },
     );
   }

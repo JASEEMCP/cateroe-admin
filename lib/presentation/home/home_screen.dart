@@ -98,11 +98,12 @@ class ScreenHome extends StatelessWidget {
               fontWeight: FontWeight.normal,
               fontSize: 18,
             ),
-            CustomEventCard(),
+            CustomEventCard(
+              onTap: () {},
+            ),
           ],
         ),
       ),
     );
   }
 }
-

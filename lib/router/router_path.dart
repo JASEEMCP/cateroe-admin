@@ -20,6 +20,8 @@ class ScreenPath {
 
   /// Sub-Routes
   static remarkEvent() => _appendIdIntoCurrentPath('event-list');
+  static addNewUser() => _appendIdIntoCurrentPath('new-user');
+  static eventDetail() => _appendIdIntoCurrentPath('event-detail');
 
   ///Appending path
   static _appendIdIntoCurrentPath(String path) {
