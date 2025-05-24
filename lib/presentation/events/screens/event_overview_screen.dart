@@ -189,12 +189,14 @@ class EventOverviewScreen extends StatelessWidget {
                   ),
                   for (int i = 0; i < 7; i++)
                     Column(
+                      spacing: inset.xs,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CustomText(
                           txt: 'Boy Name (Junior)',
                           color: Colors.indigo,
                           fontWeight: FontWeight.w400,
+                          fontSize: 14,
                         ),
                         _buildIconText(
                           context,
@@ -202,7 +204,9 @@ class EventOverviewScreen extends StatelessWidget {
                           txt: '5.3 Rating',
                           color: Colors.green,
                         ),
-                        Divider(),
+                        Divider(
+                          color: context.theme.kBlack.withValues(alpha: 0.1),
+                        ),
                       ],
                     ),
                 ],
