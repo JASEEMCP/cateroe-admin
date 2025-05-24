@@ -3,7 +3,8 @@ import 'package:app/resource/utils/common_lib.dart';
 
 class CustomEventCard extends StatelessWidget {
   const CustomEventCard({
-    super.key, required this.onTap,
+    super.key,
+    required this.onTap,
   });
   final Function() onTap;
 
@@ -232,7 +233,9 @@ class CustomTransactionCard extends StatelessWidget {
             text: 'Pending List',
             textColor: context.theme.kPrimaryGold,
             bgColor: context.theme.kSecondaryLight,
-            onTap: () {},
+            onTap: () {
+              context.go(ScreenPath.paymentList());
+            },
           ),
         ],
       ),

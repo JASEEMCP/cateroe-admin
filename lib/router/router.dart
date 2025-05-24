@@ -5,6 +5,7 @@ import 'package:app/presentation/events/screens/event_detail_screen.dart';
 import 'package:app/presentation/home/home_screen.dart';
 import 'package:app/presentation/remarks/remarks_screen.dart';
 import 'package:app/presentation/remarks/screens/remark_event_list_screen.dart';
+import 'package:app/presentation/transaction/screens/payment_list_screen.dart';
 import 'package:app/presentation/transaction/transaction_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -92,6 +93,18 @@ class AppRouter {
                 transitionsBuilder: useNavChangeTransition,
               );
             },
+            routes: [
+              GoRoute(
+                path: 'payment-list',
+                parentNavigatorKey: _rootNavigatorKey,
+                pageBuilder: (context, state) {
+                  return const CustomTransitionPage(
+                    child: UserPaymentListScreen(),
+                    transitionsBuilder: useNavChangeTransition,
+                  );
+                },
+              ),
+            ],
           ),
 
           /// Add-User

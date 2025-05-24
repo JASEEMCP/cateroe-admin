@@ -21,7 +21,9 @@ class EventScreen extends StatelessWidget {
               ),
               actions: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    context.go(ScreenPath.eventDetail());
+                  },
                   icon: Icon(
                     Icons.add_circle_rounded,
                     size: 35,

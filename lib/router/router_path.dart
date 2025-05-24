@@ -22,6 +22,7 @@ class ScreenPath {
   static remarkEvent() => _appendIdIntoCurrentPath('event-list');
   static addNewUser() => _appendIdIntoCurrentPath('new-user');
   static eventDetail() => _appendIdIntoCurrentPath('event-detail');
+  static paymentList() => _appendIdIntoCurrentPath('payment-list');
 
   ///Appending path
   static _appendIdIntoCurrentPath(String path) {
